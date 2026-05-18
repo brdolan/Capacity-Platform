@@ -1,12 +1,218 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Capacity Platform Hub</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capacity Platform Team</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-1:#f4f9ff;
+      --bg-2:#eef6f0;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --brand:#0f6cbd;
+      --brand-dark:#0a4f8a;
+      --ok:#0f7b43;
+      --coming:#9a3412;
+      --border:#dbe7f3;
+      --shadow:0 10px 30px rgba(15, 108, 189, 0.12);
+      --radius:16px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Source Sans 3", "Segoe UI", Tahoma, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 350px at 10% -10%, #dbeeff 0%, transparent 60%),
+        radial-gradient(700px 280px at 90% 0%, #e4f7e7 0%, transparent 55%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      min-height:100vh;
+    }
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:36px 20px 48px;
+    }
+
+    .hero{
+      background:linear-gradient(135deg, var(--brand), var(--brand-dark));
+      color:#fff;
+      border-radius:24px;
+      padding:28px 28px 24px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-80px;
+      top:-80px;
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.12);
+    }
+
+    .eyebrow{
+      font-family:"Space Grotesk", sans-serif;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:12px;
+      opacity:.9;
+      margin-bottom:8px;
+    }
+
+    h1{
+      margin:0;
+      font-family:"Space Grotesk", sans-serif;
+      font-size:36px;
+      line-height:1.1;
+      letter-spacing:-0.02em;
+    }
+
+    .sub{
+      margin:10px 0 0;
+      max-width:760px;
+      font-size:18px;
+      opacity:.95;
+    }
+
+    .section-title{
+      margin:28px 0 12px;
+      font-family:"Space Grotesk", sans-serif;
+      font-size:24px;
+      letter-spacing:-0.01em;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:14px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:16px;
+      box-shadow:0 4px 14px rgba(15, 23, 42, 0.05);
+      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      text-decoration:none;
+      color:inherit;
+      display:block;
+    }
+
+    .card:hover{
+      transform:translateY(-3px);
+      border-color:#bfd8f2;
+      box-shadow:0 10px 24px rgba(15, 108, 189, 0.15);
+    }
+
+    .top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:8px;
+      margin-bottom:10px;
+    }
+
+    .name{
+      font-family:"Space Grotesk", sans-serif;
+      font-size:19px;
+      margin:0;
+    }
+
+    .tag{
+      font-size:12px;
+      font-weight:700;
+      padding:4px 8px;
+      border-radius:999px;
+      background:#e2f3ff;
+      color:var(--brand-dark);
+      border:1px solid #b9ddfa;
+      white-space:nowrap;
+    }
+
+    .tag.coming{
+      background:#fff2e8;
+      color:var(--coming);
+      border-color:#ffd9c2;
+    }
+
+    .desc{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.4;
+    }
+
+    .footer{
+      margin-top:26px;
+      color:#5b6778;
+      font-size:13px;
+    }
+
+    @media (max-width:700px){
+      h1{font-size:30px}
+      .sub{font-size:16px}
+      .hero{padding:22px}
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to the Capacity Platform Hub</h1>
-  <ul>
-    <li><a href="Tabletop/FCR/fcr-tabletop-review.html">FCR Tabletop Review</a></li>
-  </ul>
+  <div class="wrap">
+    <header class="hero">
+      <div class="eyebrow">Capacity Platform Team</div>
+      <h1>Tabletop Reviews</h1>
+      <p class="sub">
+        Central hub for scenario walkthroughs and decision-readiness reviews.
+      </p>
+    </header>
+
+    <h2 class="section-title">Scenarios</h2>
+
+    <section class="grid">
+      <a class="card" href="Tabletop/FCR/fcr-tabletop-review.html">
+        <div class="top">
+          <h3 class="name">FCR</h3>
+          <span class="tag">Live</span>
+        </div>
+        <p class="desc">
+          Future Capacity Reservation tabletop review, with interactive flows and timeline details.
+        </p>
+      </a>
+
+      <a class="card" href="#" onclick="return false;" aria-disabled="true">
+        <div class="top">
+          <h3 class="name">Usage Capping</h3>
+          <span class="tag coming">Coming Soon</span>
+        </div>
+        <p class="desc">
+          Placeholder for usage threshold scenarios, controls, and mitigation workflow.
+        </p>
+      </a>
+
+      <a class="card" href="#" onclick="return false;" aria-disabled="true">
+        <div class="top">
+          <h3 class="name">Demand Shaping</h3>
+          <span class="tag coming">Coming Soon</span>
+        </div>
+        <p class="desc">
+          Placeholder for demand balancing scenarios across constrained regions and time windows.
+        </p>
+      </a>
+    </section>
+
+    <p class="footer">Microsoft Confidential - Internal Use</p>
+  </div>
 </body>
-</html>FCR Tabletop Flow - HTML output
+</html>
